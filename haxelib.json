@@ -1,0 +1,10 @@
+{
+  "name": "thame",
+  "url": "http://github.com/haxenme/thame/",
+  "license": "MIT",
+  "tags": ["mp3", "lame" ],
+  "description": "This Haxelib Aint an MP3 Encoder.",
+  "version": "1.0.0",
+  "contributors": ["gamehaxe"],
+  "dependencies": {}
+}

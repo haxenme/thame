@@ -1,0 +1,75 @@
+<xml>
+
+<include name="${HXCPP}/build-tool/BuildCommon.xml"/>
+
+
+<files id="libmp3lame" >
+   <compilerflag value="-Iinclude" />
+   <compilerflag value="-I." />
+   <compilerflag value="-Ilibmp3lame" />
+   <compilerflag value="-Impglib" />
+
+   <compilerflag value="-DFLOAT8=float" />
+   <compilerflag value="-DREAL_IS_FLOAT=1" />
+   <compilerflag value="-DHAVE_MPGLIB" />
+   <compilerflag value="-DTAKEHIRO_IEEE754_HACK" />
+   <compilerflag value="-DBS_FORMAT=BINARY" />
+
+   <section if="windows" >
+      <compilerflag value="-DHAVE_CONFIG_H" />
+      <compilerflag value="-DWIN32" />
+   </section>
+
+   <file name="frontend/lame_main.c" />
+   <file name="frontend/main.c" />
+   <file name="frontend/get_audio.c" />
+   <file name="frontend/parse.c" />
+   <file name="frontend/timestatus.c" />
+   <file name="frontend/lametime.c" />
+   <file name="frontend/console.c" />
+   <file name="frontend/brhist.c" />
+
+   <file name="libmp3lame/bitstream.c" />
+   <file name="libmp3lame/encoder.c" />
+   <file name="libmp3lame/fft.c" />
+   <file name="libmp3lame/gain_analysis.c" />
+   <file name="libmp3lame/id3tag.c" />
+   <file name="libmp3lame/lame.c" />
+   <file name="libmp3lame/newmdct.c" />
+   <file name="libmp3lame/psymodel.c" />
+   <file name="libmp3lame/quantize.c" />
+   <file name="libmp3lame/quantize_pvt.c" />
+   <file name="libmp3lame/vector/xmm_quantize_sub.c" />
+   <file name="libmp3lame/set_get.c" />
+   <file name="libmp3lame/vbrquantize.c" />
+   <file name="libmp3lame/reservoir.c" />
+   <file name="libmp3lame/tables.c" />
+   <file name="libmp3lame/takehiro.c" />
+   <file name="libmp3lame/util.c" />
+   <file name="libmp3lame/mpglib_interface.c" />
+   <file name="libmp3lame/VbrTag.c" />
+   <file name="libmp3lame/presets.c" />
+   <file name="libmp3lame/version.c" />
+
+   <file name="mpglib/common.c" />
+   <file name="mpglib/dct64_i386.c" />
+   <file name="mpglib/decode_i386.c" />
+   <file name="mpglib/layer1.c" />
+   <file name="mpglib/layer2.c" />
+   <file name="mpglib/layer3.c" />
+   <file name="mpglib/tabinit.c" />
+   <file name="mpglib/interface.c" />
+
+</files>
+
+
+
+<target id="default" output="thame" tool="linker" toolid="exe">
+  <files id="libmp3lame"/>
+  <outdir name="../../bin/${BINDIR}"/>
+</target>
+
+
+</xml>
+
+
